@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167035950849",
+    "project_id": "wisatapedia-2b1dd",
+    "storage_bucket": "wisatapedia-2b1dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167035950849:android:4884f9870ce7ebcbf42d00",
+        "android_client_info": {
+          "package_name": "com.example.wisatapedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167035950849-mo3kjdegnu3j7uoe59kjomggbnv36h0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-AyN3YS0LYB3v-r9f850qUwEqLXs8_bM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167035950849-mo3kjdegnu3j7uoe59kjomggbnv36h0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
