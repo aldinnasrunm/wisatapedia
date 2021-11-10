@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.wisatapedia.activity.DashBoardActivity
 import com.example.wisatapedia.activity.loginActivity
 import com.example.wisatapedia.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -28,6 +29,12 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, currentUser.toString(), Toast.LENGTH_SHORT).show()
         if (currentUser == null){
             val intent = Intent(this, loginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }else{
+            val intent = Intent(this, DashBoardActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
