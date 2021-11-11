@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginRight="50dp"
-    android:layout_marginLeft="50dp"
-    tools:context=".activity.registerActivity">
+    tools:context=".activity.RegisterActivity">
     <!--    Text View Login-->
     <TextView
         android:id="@+id/tvRegister"
@@ -24,6 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
         android:hint="Type Email"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -41,12 +41,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="Type Password"
+        app:passwordToggleEnabled="true"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilUserEmailRegister">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUserPasswordRegister"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -56,7 +60,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        app:passwordToggleEnabled="true"
         android:hint="Type Password Again"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilUserPasswordRegister">
@@ -64,6 +71,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUserPasswordCheckRegister"
             android:layout_width="match_parent"
+            android:inputType="textPassword"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
     <!--    Button to create Account-->

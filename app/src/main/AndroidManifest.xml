@@ -13,10 +13,10 @@
             android:name=".activity.DashBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.loginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.registerActivity"
+            android:name=".activity.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

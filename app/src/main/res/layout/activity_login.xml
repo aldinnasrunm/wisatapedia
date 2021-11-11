@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp"
-    tools:context=".activity.loginActivity">
+    tools:context=".activity.LoginActivity">
 
 <!--    Text View Login-->
     <TextView
@@ -26,6 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:hint="Type Email"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin">
@@ -41,13 +41,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        app:passwordToggleEnabled="true"
         android:hint="Type Password"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilUserEmail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUserPassword"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
