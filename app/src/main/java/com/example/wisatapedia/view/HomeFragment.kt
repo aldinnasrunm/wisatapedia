@@ -1,4 +1,4 @@
-package com.example.wisatapedia.fragment
+package com.example.wisatapedia.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

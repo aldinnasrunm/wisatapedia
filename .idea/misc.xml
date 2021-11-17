@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21614583333333334" />
-        <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/drawable/ic_search.xml" value="0.21614583333333334" />
-        <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/layout/activity_dash_board.xml" value="0.22" />
-        <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/layout/activity_main.xml" value="0.10960144927536232" />
-        <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/drawable/ic_bookmark.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/drawable/ic_people.xml" value="0.39010416666666664" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/drawable/ic_setting.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.36875" />
+        <entry key="app/src/main/res/layout/fragment_whislist.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/view_model_fragment.xml" value="0.17604166666666668" />
+        <entry key="app/src/main/res/menu/menu_navbar.xml" value="0.35989583333333336" />
       </map>
     </option>
   </component>
