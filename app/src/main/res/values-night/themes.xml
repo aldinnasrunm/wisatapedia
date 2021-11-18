@@ -13,4 +13,17 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--    Text Big Bold-->
+    <style name="custom.text.big" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/light_tosca3</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <!--    Text normal medium-->
+    <style name="custom.text.nomal_medium" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/light_tosca3</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
 </resources>
