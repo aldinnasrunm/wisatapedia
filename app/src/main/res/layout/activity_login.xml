@@ -80,7 +80,8 @@
     <!--    Button to create Account-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Login"
@@ -88,13 +89,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilUserPassword" />
     <!--    Intent to register-->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGoRegiter"
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btnGoRegiter"-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Regiter"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />-->
+    <TextView
+        android:id="@+id/tvLoginToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Regiter"
+        android:layout_marginBottom="32dp"
+        android:text="@string/belum_punya_akun_daftar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
