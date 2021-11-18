@@ -7,6 +7,8 @@
     tools:context=".activity.LoginActivity">
 
     <!--    Text View Login-->
+    <!--   Text Input Layout for email and password -->
+    <!--    Email-->
     <TextView
         android:id="@+id/tvLogin"
         style="@style/custom.text.big"
@@ -16,10 +18,10 @@
         android:layout_marginTop="48dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--   Text Input Layout for email and password -->
-    <!--    Email-->
+
     <TextView
         android:id="@+id/tvLoginEmail"
         android:layout_width="wrap_content"
