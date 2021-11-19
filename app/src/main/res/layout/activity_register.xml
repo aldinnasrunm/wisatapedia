@@ -8,11 +8,11 @@
     <!--    Text View Login-->
     <TextView
         android:id="@+id/tvRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="356dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Register"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
@@ -23,15 +23,29 @@
         app:layout_constraintTop_toTopOf="parent" />/>
     <!--   Text Input Layout for email and password -->
     <!--    Email-->
+
+    <TextView
+        android:layout_marginBottom="2dp"
+        android:id="@+id/tvRegisterEmail"
+        style="@style/custom.text.nomal_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="18dp"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/tilUserEmailRegister"
+        app:layout_constraintStart_toStartOf="@+id/tvRegister"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister"
+        app:layout_constraintVertical_bias="1.0" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUserEmailRegister"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
-        android:hint="Type Email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegister">
@@ -42,12 +56,12 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
     <!--    Password -->
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUserPasswordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:hint="Type Password"
+        android:layout_marginTop="22dp"
         app:passwordToggleEnabled="true"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
@@ -61,15 +75,31 @@
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
     </com.google.android.material.textfield.TextInputLayout>
     <!--    Check Password -->
+
+    <TextView
+        android:id="@+id/tvRegisterCheckPassword"
+        style="@style/custom.text.nomal_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:text="Check Password"
+        app:layout_constraintBottom_toTopOf="@+id/tilUserPasswordCheckRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister"
+        app:layout_constraintVertical_bias="1.0" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUserPasswordCheckRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         app:passwordToggleEnabled="true"
-        android:hint="Type Password Again"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -86,23 +116,45 @@
     <!--    Button to create Account-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Register"
-        style="@style/custom.main.button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilUserPasswordCheckRegister" />
     <!--    Intent to login-->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGoLogin"
+    <TextView
+        android:id="@+id/tvRegisterToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        style="@style/custom.main.button"
+        android:layout_marginBottom="32dp"
+        android:text="@string/sudah_punya_akun_masuk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- android:id="@+id/btnGoLogin"
+    style="@style/custom.main.button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Login"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+    app:layout_constraintVertical_bias="0.913" /> -->!
+
+    <TextView
+        android:id="@+id/tvRegisterPassword"
+        style="@style/custom.text.nomal_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Password"
+        app:layout_constraintBottom_toTopOf="@+id/tilUserPasswordRegister"
+        app:layout_constraintStart_toStartOf="@+id/tvRegisterEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tilUserEmailRegister"
+        app:layout_constraintVertical_bias="0.6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
