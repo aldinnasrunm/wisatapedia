@@ -18,10 +18,10 @@ class RegisterActivity : AppCompatActivity() {
 
         auth  = FirebaseAuth.getInstance()
 
-        binding.btnGoLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            taskIntent(intent)
-        }
+//        binding.btnGoLogin.setOnClickListener {
+//            val intent = Intent(this, LoginActivity::class.java)
+//            taskIntent(intent)
+//        }
 
         binding.btnRegister.setOnClickListener {
             if (getRegisterDataPassword() != null){

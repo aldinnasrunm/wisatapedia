@@ -6,28 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.wisatapedia.R
+import com.example.wisatapedia.databinding.FragmentHomeBinding
+import com.example.wisatapedia.viewmodels.SliderAdapter
+import com.example.wisatapedia.viewmodels.SliderData
+import com.smarteist.autoimageslider.SliderView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+private lateinit var binding: FragmentHomeBinding
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -35,26 +22,51 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        var url1 = "https://github.com/namdoosan/beliingelato/blob/main/wisata1.jpg?raw=true"
+        var url2 = "https://github.com/namdoosan/beliingelato/blob/main/wisata2.jpg?raw=true"
+        var url3 = "https://github.com/namdoosan/beliingelato/blob/main/wisata3.jpg?raw=true"
+
+        val sliderDataArrayList: ArrayList<SliderData> = ArrayList()
+        val sliderView = binding.slider
+
+        // adding the urls inside array list
+        // adding the urls inside array list
+        sliderDataArrayList.add(SliderData(url1))
+        sliderDataArrayList.add(SliderData(url2))
+        sliderDataArrayList.add(SliderData(url3))
+
+        // passing this array list inside our adapter class.
+
+        // passing this array list inside our adapter class.
+        val adapter = SliderAdapter(this.context, sliderDataArrayList)
+
+        // below method is used to set auto cycle direction in left to
+        // right direction you can change according to requirement.
+
+        // below method is used to set auto cycle direction in left to
+        // right direction you can change according to requirement.
+        sliderView.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
+
+        // below method is used to
+        // setadapter to sliderview.
+        sliderView.setSliderAdapter(adapter);
+
+        // below method is use to set
+        // scroll time in seconds.
+        sliderView.setScrollTimeInSec(3);
+
+        // to set it scrollable automatically
+        // we use below method.
+        sliderView.setAutoCycle(true);
+
+        // to start autocycle below method is used.
+        sliderView.startAutoCycle();
     }
 }

@@ -17,6 +17,7 @@ class DashBoardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         setView()
     }
 

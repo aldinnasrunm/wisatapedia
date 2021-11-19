@@ -39,12 +39,19 @@
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
+
 <!--teks Big white Amiri-->
     <style name="custom.text.amiri_bold" parent="TextAppearance.AppCompat.Body2">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">36sp</item>
         <item name="android:fontFamily">@font/amiri_bold</item>
         <item name="lineHeight">55sp</item>
+    </style>
+<!-- tesk custom small-->
+    <style name="custom.text.small_grey" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">9sp</item>
+        <item name="fontFamily">@font/poppins</item>
     </style>
 
 </resources>
