@@ -24,9 +24,14 @@
     <!-- Button    -->
     <style name="custom.main.button" parent="Widget.MaterialComponents.Button">
         <item name="background">@drawable/form</item>
+        
+    
+        
 
     </style>
 
+    <!-- Custom Button Setting -->
+    <style name="custom.setting."
 <!--    Text Big Bold-->
     <style name="custom.text.big" parent="TextAppearance.AppCompat.Body1">
         <item name="android:textColor">@color/dark_blue</item>

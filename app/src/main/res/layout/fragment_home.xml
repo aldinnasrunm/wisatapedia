@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTextGreeting"
+        android:id="@+id/tvTextGreetingName"
         style="@style/custom.text.nomal_medium"
         android:layout_width="192dp"
         android:layout_height="27dp"
