@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -57,6 +58,14 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     //circle image view dependency
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //mapbox dependency
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1'
+//    implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:8.4.0@aar'){
+//        transitive=true
+//    }
+    //maps google
+    implementation 'com.google.android.gms:play-services-maps:18.0.0'
+//    implementation 'com.mapbox.maps:android:10.1.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'com.google.firebase:firebase-firestore:24.0.0'

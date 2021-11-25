@@ -44,6 +44,7 @@ class ItemAdapter(private val dataList : ArrayList<Items>, cxt: Context?) : Recy
         Log.d("Firebase viewholder data ",data.toString())
 //        Log.d("Firebase viewholder data Image",data.image.toString())
 //        Log.d("Firebase viewholder data best Time ", data.time!!["bestTime"].toString())
+
         val imgPath = data.uid.toString() +"/"+data.image!![0].toString()
         val imgRef : StorageReference = mStorageReference.child(imgPath)
         val rating : Int = data.rating!!["total"]!!.toInt() / data.rating!!["voters"]!!.toInt()

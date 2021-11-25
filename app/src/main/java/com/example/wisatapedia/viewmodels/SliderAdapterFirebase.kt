@@ -12,9 +12,9 @@ import com.google.firebase.storage.StorageReference
 import com.smarteist.autoimageslider.SliderViewAdapter
 import java.util.ArrayList
 
-
-class SliderAdapter(context: Context?, sliderDataArrayList: ArrayList<SliderData>) :
-    SliderViewAdapter<SliderAdapter.SliderAdapterViewHolder>() {
+lateinit var mStorageReference: StorageReference
+class SliderAdapterFirebase(context: Context?, sliderDataArrayList: ArrayList<SliderData>) :
+    SliderViewAdapter<SliderAdapterFirebase.SliderAdapterViewHolder>() {
     // list for storing urls of images.
     private val mSliderItems: List<SliderData>
 
@@ -29,11 +29,18 @@ class SliderAdapter(context: Context?, sliderDataArrayList: ArrayList<SliderData
     // set data to item of Slider View.
     override fun onBindViewHolder(viewHolder: SliderAdapterViewHolder, position: Int) {
         val sliderItem = mSliderItems[position]
+        mStorageReference = FirebaseStorage.getInstance().getReference()
 
-        Glide.with(viewHolder.itemView)
-            .load(sliderItem.imgUrl)
-            .fitCenter()
-            .into(viewHolder.imageViewBackground)
+        // Glide is use to load image
+        // from url in your imageview.
+        val imgRef : StorageReference = mStorageReference.child(sliderItem.imgUrl)
+        imgRef.downloadUrl.addOnSuccessListener { uri ->
+            Glide.with(viewHolder.itemView)
+                .load(uri.toString())
+                .centerCrop()
+                .into(viewHolder.imageViewBackground)
+        }
+
     }
 
     // this method will return

@@ -54,7 +54,7 @@ class SearchFragment : Fragment() {
 
     private fun EventChangeListener() {
         db = FirebaseFirestore.getInstance()
-        db.collection("item").whereEqualTo("category", "mountain")
+        db.collection("item")
             .addSnapshotListener(object : EventListener<QuerySnapshot>{
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
                     if(error != null){
@@ -64,9 +64,9 @@ class SearchFragment : Fragment() {
                     Log.d("Firebase Data", value.toString())
                     for (dc : DocumentChange in value?.documentChanges!!){
                         if (dc.type == DocumentChange.Type.ADDED){
-                            Log.d("Doc error", dc.document.toString())
-                            var x = dc.document.toObject(Items::class.java)
-                            Log.d("Document Data : ", x.toString())
+//                            Log.d("Doc error", dc.document.toString())
+//                            var x = dc.document.toObject(Items::class.java)
+//                            Log.d("Document Data : ", x.toString())
                             dataList.add(dc.document.toObject(Items::class.java))
                         }
                     }
