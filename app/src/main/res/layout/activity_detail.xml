@@ -1,306 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     tools:context=".activity.DetailActivity">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvSlider"
+
+    <ScrollView
+        android:id="@+id/svDetail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="32dp"
-        app:cardCornerRadius="18dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/clDetailButtom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.smarteist.autoimageslider.SliderView
-            android:id="@+id/imageSliderDetail"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:sliderAnimationDuration="600"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderAutoCycleEnabled="true"
-            app:sliderIndicatorAnimationDuration="600"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorMargin="15dp"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="@color/green_dark"
-            app:sliderIndicatorUnselectedColor="@color/grey"
-            app:sliderScrollTimeInSec="1"
-            app:sliderStartAutoCycle="true" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvDetailName"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="-52dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cvSlider"
-        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_marginBottom="32dp"
+            android:layout_height="0dp">
 
-            <TextView
-                android:id="@+id/tvDetailName"
-                style="@style/custom.text.nomal_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Embung Sriten" />
-
-            <ImageView
-                android:id="@+id/ivDetailIconLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_location_on_24"
-                app:layout_constraintStart_toStartOf="@id/tvDetailName"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailName" />
-
-            <TextView
-                android:id="@+id/tvDetailAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/ivDetailIconLocation"
-                app:layout_constraintStart_toEndOf="@+id/ivDetailIconLocation"
-                app:layout_constraintTop_toTopOf="@+id/ivDetailIconLocation"
-                tools:text="Nglipar, Gunung Kidul, Yogyakarta" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvDetailRating"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/cvDetailName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cvDetailName">
-       <androidx.constraintlayout.widget.ConstraintLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
-
-           <ImageView
-               android:id="@+id/ic_detailRating"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginStart="5dp"
-               android:layout_marginTop="5dp"
-               android:layout_marginEnd="5dp"
-               android:src="@drawable/ic_big_star_rating"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
-
-           <TextView
-               android:id="@+id/tvDetailRating"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="@+id/ic_detailRating"
-               app:layout_constraintStart_toStartOf="@+id/ic_detailRating"
-               app:layout_constraintTop_toBottomOf="@+id/ic_detailRating"
-               tools:text="4/5"
-               style="@style/custom.text.nomal_medium"
-               />
-       </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPriceInformation"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvDetailName">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tvOpenTtitle"
-                style="@style/custom.text.nomal_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Jadwal Operasional"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/ivIconClock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_clock"
-                app:layout_constraintBottom_toBottomOf="@+id/tvDetailOpen"
-                app:layout_constraintStart_toStartOf="@+id/tvOpenTtitle"
-                app:layout_constraintTop_toTopOf="@+id/tvDetailOpen" />
-
-            <TextView
-                android:id="@+id/tvDetailOpen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@+id/ivIconClock"
-                app:layout_constraintTop_toBottomOf="@+id/tvOpenTtitle"
-                tools:text="Jum'at-sabtu\n07.00-15,00" />
-
-            <TextView
-                android:id="@+id/tvBestTimeTitle"
-                style="@style/custom.text.nomal_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Waktu Terbaik"
-                app:layout_constraintStart_toStartOf="@+id/ivIconClock"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailOpen" />
-
-            <ImageView
-                android:id="@+id/ivDetailIconBestTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:src="@drawable/ic_best_view"
-                app:layout_constraintBottom_toBottomOf="@+id/tvDetailBestTime"
-                app:layout_constraintStart_toStartOf="@+id/tvBestTimeTitle"
-                app:layout_constraintTop_toTopOf="@+id/tvDetailBestTime" />
-
-            <TextView
-                android:id="@+id/tvDetailBestTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@+id/ivDetailIconBestTime"
-                app:layout_constraintTop_toBottomOf="@+id/tvBestTimeTitle"
-                tools:text="Sore" />
-
-            <TextView
-                android:id="@+id/tvTicketPrice"
-                style="@style/custom.text.nomal_medium"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSlider"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:text="Harga Tiket"
-                app:layout_constraintStart_toEndOf="@+id/tvOpenTtitle"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="32dp"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/ivDetailIconTicket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:src="@drawable/ic_ticket"
-                app:layout_constraintBottom_toBottomOf="@+id/tvDetailTicket"
-                app:layout_constraintStart_toStartOf="@+id/tvTicketPrice"
-                app:layout_constraintTop_toTopOf="@+id/tvDetailTicket" />
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSliderDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="@color/green_dark"
+                    app:sliderIndicatorUnselectedColor="@color/grey"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvDetailName"
+                android:layout_width="280dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="-52dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvSlider"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvDetailName"
+                        style="@style/custom.text.nomal_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Embung Sriten" />
+
+                    <ImageView
+                        android:id="@+id/ivDetailIconLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_location_on_24"
+                        app:layout_constraintStart_toStartOf="@id/tvDetailName"
+                        app:layout_constraintTop_toBottomOf="@id/tvDetailName" />
+
+                    <TextView
+                        android:id="@+id/tvDetailAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivDetailIconLocation"
+                        app:layout_constraintStart_toEndOf="@+id/ivDetailIconLocation"
+                        app:layout_constraintTop_toTopOf="@+id/ivDetailIconLocation"
+                        tools:text="Nglipar, Gunung Kidul, Yogyakarta" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvDetailRating"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvDetailName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cvDetailName">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ic_detailRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/ic_big_star_rating"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDetailRating"
+                        style="@style/custom.text.nomal_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ic_detailRating"
+                        app:layout_constraintStart_toStartOf="@+id/ic_detailRating"
+                        app:layout_constraintTop_toBottomOf="@+id/ic_detailRating"
+                        tools:text="4/5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPriceInformation"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvDetailName">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvOpenTtitle"
+                        style="@style/custom.text.nomal_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Jadwal Operasional"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivIconClock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_clock"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailOpen"
+                        app:layout_constraintStart_toStartOf="@+id/tvOpenTtitle"
+                        app:layout_constraintTop_toTopOf="@+id/tvDetailOpen" />
+
+                    <TextView
+                        android:id="@+id/tvDetailOpen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconClock"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOpenTtitle"
+                        tools:text="Jum'at-sabtu\n07.00-15,00" />
+
+                    <TextView
+                        android:id="@+id/tvBestTimeTitle"
+                        style="@style/custom.text.nomal_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="Waktu Terbaik"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvTicketPrice" />
+
+                    <ImageView
+                        android:id="@+id/ivDetailIconBestTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:src="@drawable/ic_best_view"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailBestTime"
+                        app:layout_constraintStart_toStartOf="@+id/tvBestTimeTitle"
+                        app:layout_constraintTop_toTopOf="@+id/tvDetailBestTime" />
+
+                    <TextView
+                        android:id="@+id/tvDetailBestTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/ivDetailIconBestTime"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBestTimeTitle"
+                        tools:text="Sore" />
+
+                    <TextView
+                        android:id="@+id/tvTicketPrice"
+                        style="@style/custom.text.nomal_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Harga Tiket"
+                        app:layout_constraintEnd_toStartOf="@+id/tvBestTimeTitle"
+                        app:layout_constraintStart_toEndOf="@+id/tvOpenTtitle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivDetailIconTicket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:src="@drawable/ic_ticket"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailTicket"
+                        app:layout_constraintStart_toStartOf="@+id/tvTicketPrice"
+                        app:layout_constraintTop_toTopOf="@+id/tvDetailTicket" />
+
+                    <TextView
+                        android:id="@+id/tvDetailTicket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/ivDetailIconTicket"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTicketPrice"
+                        tools:text="Rp,15000" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/tvDetailTicket"
+                android:id="@+id/tvTitleDescription"
+                style="@style/custom.text.nomal_medium2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@+id/ivDetailIconTicket"
-                app:layout_constraintTop_toBottomOf="@+id/tvTicketPrice"
-                tools:text="Rp,15000" />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Tentang Destinasi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvPriceInformation" />
+
+            <TextView
+                android:id="@+id/tvDetailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleDescription"
+                tools:text="Objek wisata di gunung kidul yang memiliki sungai dibawah tanah yang cocok untuk berekreasi bersama keluarga" />
+
+            <!--    <androidx.cardview.widget.CardView-->
+            <!--        android:id="@+id/cvDetailMaps"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="250dp"-->
+            <!--        android:layout_marginStart="24dp"-->
+            <!--        android:layout_marginTop="32dp"-->
+            <!--        android:layout_marginEnd="24dp"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toBottomOf="@id/tvDetailDescription">-->
+
+            <!--    </androidx.cardview.widget.CardView>-->
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentMaps"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription" />
+
+            <TextView
+                android:id="@+id/tvFacilities"
+                style="@style/custom.text.nomal_medium2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Fasilitas"
+                app:layout_constraintStart_toStartOf="@+id/fragmentMaps"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentMaps" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListFacilities"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="52dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFacilities" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
-    <TextView
-        android:id="@+id/tvTitleDescription"
-        style="@style/custom.text.nomal_medium2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Tentang Destinasi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvPriceInformation" />
-
-    <TextView
-        android:id="@+id/tvDetailDescription"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDetailButtom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleDescription"
-        tools:text="Objek wisata di gunung kidul yang memiliki sungai dibawah tanah yang cocok untuk berekreasi bersama keluarga" />
+        app:layout_constraintStart_toStartOf="parent">
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/cvDetailMaps"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="250dp"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:layout_marginEnd="24dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tvDetailDescription">-->
+        <Button
+            android:id="@+id/btnSaveWhislist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save To Whislist"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    </androidx.cardview.widget.CardView>-->
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentMaps"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription" />
-
-    <TextView
-        android:id="@+id/tvFacilities"
-        style="@style/custom.text.nomal_medium2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Fasilitas"
-        app:layout_constraintStart_toStartOf="@+id/fragmentMaps"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentMaps" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListFacilities"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFacilities" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>

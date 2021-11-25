@@ -34,7 +34,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        actionBar?.hide()
+        supportActionBar?.hide()
         db = FirebaseFirestore.getInstance()
         format  = NumberFormat.getCurrencyInstance()
         format.setCurrency(Currency.getInstance("IDR"));

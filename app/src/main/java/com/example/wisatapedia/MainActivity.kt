@@ -31,9 +31,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }else{
-            val intent = Intent(this, DashBoardActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (currentUser.isEmailVerified){
+                val intent = Intent(this, DashBoardActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+
+            }
+
         }
     }
 }

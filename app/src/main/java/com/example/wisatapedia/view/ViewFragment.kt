@@ -68,10 +68,9 @@ class ViewFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
             .position(position)
             .title("Destinasi"))
-        mMap.setMaxZoomPreference(40.0f)
-        mMap.setMinZoomPreference(6.0f)
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 10.0f))
-
+        mMap.setMaxZoomPreference(40.0f)
+        mMap.setMinZoomPreference(4.0f)
     }
 
 

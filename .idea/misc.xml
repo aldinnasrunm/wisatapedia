@@ -38,6 +38,7 @@
         <entry key="app/src/main/res/drawable/ic_big_start_.xml" value="0.14791666666666667" />
         <entry key="app/src/main/res/drawable/ic_canteen.xml" value="0.15069444444444444" />
         <entry key="app/src/main/res/drawable/ic_clock.xml" value="0.1361111111111111" />
+        <entry key="app/src/main/res/drawable/ic_email_veritify.xml" value="0.1517361111111111" />
         <entry key="app/src/main/res/drawable/ic_mosque.xml" value="0.15069444444444444" />
         <entry key="app/src/main/res/drawable/ic_parking.xml" value="0.15069444444444444" />
         <entry key="app/src/main/res/drawable/ic_rest.xml" value="0.15069444444444444" />
@@ -46,12 +47,14 @@
         <entry key="app/src/main/res/drawable/ov_gradient_to_black.xml" value="0.2453125" />
         <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_email_confirmation.xml" value="0.14097222222222222" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.36875" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.13951890034364262" />
         <entry key="app/src/main/res/layout/fragment_view.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/layout/list_facilities.xml" value="0.67" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.40897097625329815" />
