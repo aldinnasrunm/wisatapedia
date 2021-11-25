@@ -17,7 +17,7 @@ class SliderAdapterFirebase(context: Context?, sliderDataArrayList: ArrayList<Sl
     SliderViewAdapter<SliderAdapterFirebase.SliderAdapterViewHolder>() {
     // list for storing urls of images.
     private val mSliderItems: List<SliderData>
-
+    var crx = context
     // We are inflating the slider_layout
     // inside on Create View Holder method.
     override fun onCreateViewHolder(parent: ViewGroup): SliderAdapterViewHolder {
@@ -35,7 +35,7 @@ class SliderAdapterFirebase(context: Context?, sliderDataArrayList: ArrayList<Sl
         // from url in your imageview.
         val imgRef : StorageReference = mStorageReference.child(sliderItem.imgUrl)
         imgRef.downloadUrl.addOnSuccessListener { uri ->
-            Glide.with(viewHolder.itemView)
+            Glide.with(crx!!)
                 .load(uri.toString())
                 .centerCrop()
                 .into(viewHolder.imageViewBackground)

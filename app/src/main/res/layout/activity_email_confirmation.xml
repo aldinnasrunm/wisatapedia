@@ -6,22 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".activity.EmailConfirmationActivity">
 
+    <TextView
+        android:id="@+id/tvVeritification"
+        style="@style/custom.text.nomal_medium2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="Mohon memveritifikasi Email Anda Terlebih dahulu"
+        app:layout_constraintBottom_toTopOf="@+id/ivEmailConfirmation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/ivEmailConfirmation"
-        android:src="@drawable/ic_email_veritify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_email_veritify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSendVeritification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Send Veritification Email"
+        android:text="Kirim kembali\nemail veritifikasi"
         app:layout_constraintEnd_toEndOf="@+id/ivEmailConfirmation"
         app:layout_constraintStart_toStartOf="@+id/ivEmailConfirmation"
         app:layout_constraintTop_toBottomOf="@+id/ivEmailConfirmation" />

@@ -15,6 +15,7 @@ class EmailConfirmationActivity : AppCompatActivity() {
         binding = ActivityEmailConfirmationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
+        supportActionBar?.hide()
         binding.btnSendVeritification.setOnClickListener {
             sendEmailVerifity()
         }

@@ -13,6 +13,8 @@ import com.example.wisatapedia.viewmodels.SliderAdapterFirebase
 import com.example.wisatapedia.viewmodels.SliderData
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -23,11 +25,12 @@ import kotlin.collections.ArrayList
 
 
 private lateinit var binding: ActivityDetailBinding
-//private lateinit var uid : String
+private lateinit var uidDestination : String
 private lateinit var format: NumberFormat
 lateinit var mStorageReference: StorageReference
 private lateinit var latlong : String
 private lateinit var db : FirebaseFirestore
+private lateinit var auth: FirebaseAuth
 
 class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,20 +39,32 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
         supportActionBar?.hide()
         db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
         format  = NumberFormat.getCurrencyInstance()
         format.setCurrency(Currency.getInstance("IDR"));
         mStorageReference = FirebaseStorage.getInstance().getReference()
         getIntentData()
-
+        binding.btnSaveWhislist.setOnClickListener {
+            saveToWhistlist()
+        }
 //        val mapFragment = supportFragmentManager
 //            .findFragmentById(R.id.map) as SupportMapFragment
 //        mapFragment.getMapAsync(this)
 
     }
 
+    private fun saveToWhistlist() {
+        val currentUser = auth.currentUser
+        val obj : ArrayList<String> = ArrayList()
+        obj.add(uidDestination)
+        val destination : Map<String, ArrayList<String>> = mapOf("destination" to obj)
+        db.collection("users").document(currentUser?.uid.toString()).update("destination", FieldValue.arrayUnion(
+            uidDestination))
+    }
+
     private fun getIntentData() {
-        val uid : String = intent.getStringExtra("uid").toString()
-        getData(uid)
+        uidDestination  = intent.getStringExtra("uid").toString()
+        getData(uidDestination)
     }
 
     private fun getData(uid: String) {

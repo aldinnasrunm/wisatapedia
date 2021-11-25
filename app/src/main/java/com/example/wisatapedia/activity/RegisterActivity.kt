@@ -12,17 +12,19 @@ import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.actionCodeSettings
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 private lateinit var binding: ActivityRegisterBinding
 private lateinit var auth : FirebaseAuth
 private lateinit var actionCodeSettings : ActionCodeSettings
+private lateinit var db : FirebaseFirestore
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        db = FirebaseFirestore.getInstance()
         auth  = FirebaseAuth.getInstance()
 
 //        binding.btnGoLogin.setOnClickListener {
@@ -74,6 +76,7 @@ class RegisterActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
                 if(task.isSuccessful){
                     var currentUser  = FirebaseAuth.getInstance().currentUser
+                    setNewUserData(currentUser?.uid.toString(), currentUser?.email.toString())
                     if (currentUser != null) {
                         if (currentUser.isEmailVerified){
                             val intent = Intent(this, DashBoardActivity::class.java)
@@ -105,7 +108,10 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-
+    private fun setNewUserData(uid : String, email : String){
+        var dataUser : Map<String, String> = mapOf("email" to email)
+        db.collection("users").document(uid).set(dataUser)
+    }
 
 
     private fun taskIntent(intent : Intent){

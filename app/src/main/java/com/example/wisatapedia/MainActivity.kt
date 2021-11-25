@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.wisatapedia.activity.DashBoardActivity
+import com.example.wisatapedia.activity.EmailConfirmationActivity
 import com.example.wisatapedia.activity.LoginActivity
 import com.example.wisatapedia.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -36,7 +37,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }else{
-
+                val intent = Intent(this, EmailConfirmationActivity::class.java)
+                startActivity(intent).also {
+                    finish()
+                }
             }
 
         }
