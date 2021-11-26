@@ -37,6 +37,7 @@ class SettingFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             logout()
         }
+        binding.tvAccountName.text = auth.currentUser?.email.toString()
     }
 
 

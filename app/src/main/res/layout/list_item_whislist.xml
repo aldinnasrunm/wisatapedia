@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginTop="24dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="20dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvItemTumbnailWhislist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                        <ImageView
+                            android:id="@+id/ivTumbnailWhislist"
+                            android:layout_width="114dp"
+                            android:layout_height="114dp"
+                            />
+                </androidx.cardview.widget.CardView>
+
+
+
+                <TextView
+                    android:id="@+id/tvItemNameWhislist"
+                    style="@style/custom.text.nomal_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="23dp"
+                    tools:text="Name"
+                    app:layout_constraintStart_toEndOf="@+id/cvItemTumbnailWhislist"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivIconWhislist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    app:layout_constraintStart_toEndOf="@+id/cvItemTumbnailWhislist"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemNameWhislist" />
+
+                <TextView
+                    android:id="@+id/tvItemLocationWhislist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivIconWhislist"
+                    app:layout_constraintStart_toEndOf="@+id/ivIconWhislist"
+                    app:layout_constraintTop_toTopOf="@+id/ivIconWhislist"
+                    tools:text="Surakarta" />
+
+                <TextView
+                    android:id="@+id/tvRatingWhislist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/cvItemTumbnailWhislist"
+                    app:layout_constraintTop_toBottomOf="@+id/ivIconWhislist"
+                    tools:text="(4)" />
+
+                <RatingBar
+                    android:id="@+id/rbarItemWhislist"
+                    style="@style/ratingBarYellow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3.5"
+                    android:stepSize="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvRatingWhislist"
+                    app:layout_constraintStart_toEndOf="@+id/tvRatingWhislist"
+                    app:layout_constraintTop_toTopOf="@+id/tvRatingWhislist" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvListData"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    style="@style/custom.text.nomal_medium1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    tools:text="abcd" />  -->
+
+                <ImageView
+                    android:id="@+id/ivIcDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_delete"
+                    app:layout_constraintBottom_toBottomOf="@+id/cvItemTumbnailWhislist"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cvItemTumbnailWhislist" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

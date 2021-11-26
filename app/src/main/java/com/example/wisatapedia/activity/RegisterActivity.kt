@@ -24,6 +24,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         db = FirebaseFirestore.getInstance()
         auth  = FirebaseAuth.getInstance()
 
@@ -109,7 +110,13 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setNewUserData(uid : String, email : String){
-        var dataUser : Map<String, String> = mapOf("email" to email)
+        var arr : ArrayList<String> = ArrayList()
+        var dataUser : Map<String, String> = mapOf("email" to email,
+            "total" to "0",
+            "target" to "0",
+            "bulan" to "0",
+            "estimate" to "0",
+            "note" to "0")
         db.collection("users").document(uid).set(dataUser)
     }
 

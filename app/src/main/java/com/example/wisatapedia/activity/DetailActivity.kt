@@ -3,6 +3,7 @@ package com.example.wisatapedia.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wisatapedia.R
 import com.example.wisatapedia.databinding.ActivityDetailBinding
@@ -59,7 +60,9 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         obj.add(uidDestination)
         val destination : Map<String, ArrayList<String>> = mapOf("destination" to obj)
         db.collection("users").document(currentUser?.uid.toString()).update("destination", FieldValue.arrayUnion(
-            uidDestination))
+            uidDestination)).addOnSuccessListener {
+            Toast.makeText(this, "Berhasil Menambahkan ke whistlist", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getIntentData() {
@@ -165,7 +168,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         sliderDataArrayList.add(SliderData(url2))
         sliderDataArrayList.add(SliderData(url3))
 
-        val adapter = SliderAdapterFirebase(this,  sliderDataArrayList)
+        val adapter = SliderAdapterFirebase(applicationContext,  sliderDataArrayList)
         sliderView.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
         sliderView.setSliderAdapter(adapter);
         sliderView.setScrollTimeInSec(3);

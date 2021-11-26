@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvLayoutAddSavingTitle"
+        style="@style/custom.text.nomal_medium2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Tambahkan Daftar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLayoutAddSavingTitleTotal"
+        style="@style/custom.text.nomal_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Total ingin ditabung"
+        app:layout_constraintStart_toStartOf="@+id/tvLayoutAddSavingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvLayoutAddSavingTitle" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etLayoutAddSavingTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLayoutAddSavingTitleTotal" />
+
+    <TextView
+        android:id="@+id/tvLayoutAddSavingMnth"
+        style="@style/custom.text.nomal_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Jumlah Bulan"
+        app:layout_constraintStart_toStartOf="@+id/etLayoutAddSavingTotal"
+        app:layout_constraintTop_toBottomOf="@+id/etLayoutAddSavingTotal" />
+
+    <EditText
+        android:id="@+id/etLayoutAddSavingMoth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvLayoutAddSavingMnth"
+        app:layout_constraintTop_toBottomOf="@+id/tvLayoutAddSavingMnth" />
+
+    <TextView
+        android:id="@+id/tvLayoutAddSavingNote"
+        style="@style/custom.text.nomal_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Catatan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLayoutAddSavingMoth" />
+
+    <EditText
+        android:id="@+id/etLayoutAddSavingNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLayoutAddSavingNote" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,13 +34,23 @@
         <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/layout/fragment_setting.xml" value="0.6152380952380953" />
         <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/layout/layout_banner.xml" value="0.19635416666666666" />
         <entry key="..\:/Users/LENOVO/StudioProjects/wisatapedia/app/src/main/res/layout/slider_layout.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22777777777777777" />
+        <entry key="app/src/main/res/drawable/ic_beach.xml" value="0.23780068728522336" />
         <entry key="app/src/main/res/drawable/ic_best_view.xml" value="0.1361111111111111" />
         <entry key="app/src/main/res/drawable/ic_big_start_.xml" value="0.14791666666666667" />
         <entry key="app/src/main/res/drawable/ic_canteen.xml" value="0.15069444444444444" />
         <entry key="app/src/main/res/drawable/ic_clock.xml" value="0.1361111111111111" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.12569444444444444" />
         <entry key="app/src/main/res/drawable/ic_email_veritify.xml" value="0.1517361111111111" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14756944444444445" />
         <entry key="app/src/main/res/drawable/ic_mosque.xml" value="0.15069444444444444" />
+        <entry key="app/src/main/res/drawable/ic_mountain.xml" value="0.23780068728522336" />
+        <entry key="app/src/main/res/drawable/ic_others.xml" value="0.23780068728522336" />
+        <entry key="app/src/main/res/drawable/ic_park.xml" value="0.23780068728522336" />
         <entry key="app/src/main/res/drawable/ic_parking.xml" value="0.15069444444444444" />
+        <entry key="app/src/main/res/drawable/ic_people_black.xml" value="0.22777777777777777" />
+        <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.14756944444444445" />
+        <entry key="app/src/main/res/drawable/ic_religious.xml" value="0.23780068728522336" />
         <entry key="app/src/main/res/drawable/ic_rest.xml" value="0.15069444444444444" />
         <entry key="app/src/main/res/drawable/ic_ticket.xml" value="0.1361111111111111" />
         <entry key="app/src/main/res/drawable/ic_toilet.xml" value="0.15069444444444444" />
@@ -50,16 +60,22 @@
         <entry key="app/src/main/res/layout/activity_email_confirmation.xml" value="0.14097222222222222" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.36875" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_saving.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21145833333333333" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.13951890034364262" />
         <entry key="app/src/main/res/layout/fragment_view.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/layout/fragment_whislist.xml" value="0.13951890034364262" />
+        <entry key="app/src/main/res/layout/layout_add_saving.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_list_saving.xml" value="0.22" />
         <entry key="app/src/main/res/layout/list_facilities.xml" value="0.67" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.40897097625329815" />
+        <entry key="app/src/main/res/layout/list_item_whislist.xml" value="0.33" />
         <entry key="app/src/main/res/layout/slider_layout.xml" value="0.1925925925925926" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14756944444444445" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22777777777777777" />
       </map>
     </option>
   </component>

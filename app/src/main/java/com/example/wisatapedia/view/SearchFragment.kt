@@ -45,23 +45,80 @@ class SearchFragment : Fragment() {
         dataList = arrayListOf()
         itemAdapter = ItemAdapter(dataList, context)
 
-
         binding.rvMain.adapter = itemAdapter
 
-        EventChangeListener()
+        EventChangeListenerLimited()
+        setClickButton()
+
+
+
 //        binding.rvMain.item
     }
+
+    private fun setClickButton() {
+        //mountain
+        binding.btnCategoryMountain.setOnClickListener {
+            EventChangeCategory("mountain")
+        }
+
+        //beach
+        binding.btnCategoryBeach.setOnClickListener {
+            EventChangeCategory("beach")
+        }
+
+        //park
+        binding.btnCategoryPark.setOnClickListener {
+            EventChangeCategory("park")
+        }
+
+        //religious
+        binding.btnCategoryReligious.setOnClickListener {
+            EventChangeCategory("religius")
+        }
+
+        //others
+        binding.btnCategoryOthers.setOnClickListener {
+            EventChangeCategory("others")
+        }
+
+        //all
+        binding.btnCategoryAll.setOnClickListener {
+            EventChangeListener()
+        }
+
+        binding.btnSearch.setOnClickListener {
+            var searchQuery = binding.etSearch.text.toString().lowercase()
+            EventChangeSearch(searchQuery)
+
+        }
+    }
+
+    private fun EventChangeListenerLimited() {
+        db = FirebaseFirestore.getInstance()
+        db.collection("item").limit(15)
+            .get().addOnSuccessListener { value ->
+                Log.d("Firebase Data", value.toString())
+                dataList.clear()
+                for (dc : DocumentChange in value?.documentChanges!!){
+                    if (dc.type == DocumentChange.Type.ADDED){
+//                            Log.d("Doc error", dc.document.toString())
+//                            var x = dc.document.toObject(Items::class.java)
+//                            Log.d("Document Data : ", x.toString())
+                        dataList.add(dc.document.toObject(Items::class.java))
+                    }
+                }
+                itemAdapter.notifyDataSetChanged()
+            }
+    }
+}
+
 
     private fun EventChangeListener() {
         db = FirebaseFirestore.getInstance()
         db.collection("item")
-            .addSnapshotListener(object : EventListener<QuerySnapshot>{
-                override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                    if(error != null){
-                        Log.e("Firebase Error", error.message.toString())
-                        return
-                    }
+            .get().addOnSuccessListener { value ->
                     Log.d("Firebase Data", value.toString())
+                    dataList.clear()
                     for (dc : DocumentChange in value?.documentChanges!!){
                         if (dc.type == DocumentChange.Type.ADDED){
 //                            Log.d("Doc error", dc.document.toString())
@@ -72,8 +129,47 @@ class SearchFragment : Fragment() {
                     }
                     itemAdapter.notifyDataSetChanged()
                 }
-            })
+            }
+
+
+    private fun EventChangeCategory(category:String) {
+        db = FirebaseFirestore.getInstance()
+        db.collection("item").whereEqualTo("category", category)
+            .get().addOnSuccessListener { value ->
+                    Log.d("Firebase Data", value.toString())
+                    dataList.clear()
+                    for (dc : DocumentChange in value?.documentChanges!!){
+                        if (dc.type == DocumentChange.Type.ADDED){
+//                            Log.d("Doc error", dc.document.toString())
+//                            var x = dc.document.toObject(Items::class.java)
+//                            Log.d("Document Data : ", x.toString())
+                            dataList.add(dc.document.toObject(Items::class.java))
+                        }
+                    }
+                    itemAdapter.notifyDataSetChanged()
+                }
+
     }
+
+    private fun EventChangeSearch(query:String) {
+        db = FirebaseFirestore.getInstance()
+        db.collection("item")
+            .get().addOnSuccessListener { value ->
+                Log.d("Firebase Data", value.toString())
+                dataList.clear()
+                for (dc : DocumentChange in value?.documentChanges!!){
+                    if (dc.type == DocumentChange.Type.ADDED){
+                        var dataSet = dc.document.toObject(Items::class.java)
+                        if (dataSet.name.toString().lowercase().contains(query)){
+                        dataList.add(dataSet)
+                    }
+                }
+                itemAdapter.notifyDataSetChanged()
+            }
+    }
+
+    }
+
 
 //    fun fragTransaction() {
 //        val viewFragment = ViewFragment()
@@ -88,4 +184,4 @@ class SearchFragment : Fragment() {
     }
 
 
-}
+
