@@ -40,7 +40,6 @@ class SavingActivity : AppCompatActivity() {
         setButton()
 
 
-
     }
 
     private fun setData(){
